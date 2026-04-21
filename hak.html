@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>الإحصاء الوصفي | ملخص الفصلين 1 و 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f9f0ff 0%, #e0e7ff 40%, #ffe4f0 100%);
+            color: #1e1a3b;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1e9ff;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b794f4;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 2rem 1rem;
+            box-shadow: 0 15px 35px rgba(128, 90, 213, 0.1);
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8b5cf6, #ec489a, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #4c3b6b;
+            max-width: 700px;
+            margin: 0.8rem auto 0;
+        }
+
+        .chapter-section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 0.2rem 1.5rem;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            border-right: 5px solid #d946ef;
+            color: #2d1b4e;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.8rem;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 1.5rem 1.5rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255,255,240,0.8);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 35px -12px rgba(139, 92, 246, 0.25);
+            background: rgba(255, 255, 255, 0.96);
+            border-color: #c4b5fd;
+        }
+        .card-icon {
+            font-size: 2rem;
+            color: #8b5cf6;
+            margin-bottom: 0.8rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(120deg, #6d28d9, #db2777);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.4rem 0;
+            color: #433878;
+            border-right: 3px solid #f472b6;
+            padding-right: 0.6rem;
+        }
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #2d2a4a;
+        }
+        .formula {
+            background: #f3efff;
+            padding: 0.7rem 1rem;
+            border-radius: 18px;
+            margin: 0.8rem 0;
+            font-family: monospace;
+            overflow-x: auto;
+            font-weight: 500;
+            border-right: 4px solid #c084fc;
+            text-align: center;
+        }
+        .badge {
+            background: #e9d5ff;
+            color: #6b21a5;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 0.7rem;
+        }
+        ul, .liste-def {
+            padding-right: 1.3rem;
+            margin-top: 0.4rem;
+        }
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c084fc, #f9a8d4, #60a5fa);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255,255,240,0.5);
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            color: #4a3b6e;
+        }
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .example-box {
+            background: #fff0f7;
+            border-radius: 20px;
+            padding: 0.8rem;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            border: 1px solid #fbcfe8;
+        }
+        .french-term {
+            font-weight: 700;
+            color: #b83280;
+            background: #fce7f3;
+            padding: 0 4px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .katex { font-size: 1.05em; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <i class="fas fa-chart-line" style="font-size: 3rem; color: #a78bfa;"></i>
+        <h1>📊 إحصاء وصفي (Statistique Descriptive)</h1>
+        <p>ملخص شامل للفصلين الأول والثاني: المفاهيم الأساسية، الجداول، التمثيلات البيانية، والمقاييس العددية (النزعة المركزية والتشتت).</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;"><i class="fas fa-graduation-cap"></i> المصطلحات بالفرنسية مع الشرح بالعربية — تصميم أنيق بألوان وردية وزرقاء</p>
+    </div>
+
+    <!-- ========================= الفصل الأول ========================= -->
+    <div class="chapter-section">
+        <div class="section-title"><i class="fas fa-book-open"></i> 📘 الفصل الأول : أساسيات ومعجم إحصائي (Notions de base)</div>
+        <div class="grid-cards">
+            <!-- المجتمع والعينة -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <h3>المجتمع <span class="french-term">Population</span> و العينة <span class="french-term">Échantillon</span></h3>
+                <div class="badge">concepts clés</div>
+                <p><span class="french-term">Population (Ω)</span> : المجموعة الكلية المدروسة، عدد أفرادها <span class="french-term">N (effectif total)</span>.<br>
+                <span class="french-term">Individu</span> : عنصر من المجتمع.<br>
+                <span class="french-term">Échantillon</span> : مجموعة جزئية من المجتمع.<br>
+                <span class="french-term">Caractère / Variable</span> : الخاصية التي تُلاحظ أو تُقاس على الأفراد.</p>
+                <div class="formula">\( \Omega = \{ \text{أفراد} \}, \quad N = \sum n_i \)</div>
+            </div>
+            <!-- أنواع المتغيرات -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-simple"></i></div>
+                <h3>أنواع المتغيرات <span class="french-term">Types de caractères</span></h3>
+                <p><span style="background:#e9d5ff; padding:0 6px; border-radius:12px;">نوعي (Qualitatif)</span> : قيم غير قابلة للقياس العددي مثل الجنسية، اللون.<br>
+                <span style="background:#fbcfe8; padding:0 6px; border-radius:12px;">كمي (Quantitatif)</span> : قابل للقياس.<br>
+                → <strong>متقطع (Discret)</strong> : قيم منعزلة (أعداد صحيحة).<br>
+                → <strong>مستمر (Continu)</strong> : أي قيمة في مجال (ℝ).</p>
+                <div class="example-box"><i class="fas fa-lightbulb"></i> مثال : عدد الأطفال (متقطع)، الوزن (مستمر).</div>
+            </div>
+            <!-- التكرارات والجداول -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-table"></i></div>
+                <h3>الجداول الإحصائية (Tableaux statistiques)</h3>
+                <p><span class="french-term">Effectif \(n_i\)</span> : عدد الأفراد الحاملين للقيمة \(x_i\).<br>
+                <span class="french-term">Fréquence \(f_i\)</span> : \(f_i = n_i / N\)، و \(\sum f_i = 1\).<br>
+                <span class="french-term">Effectifs cumulés croissants (ECC)</span> : \(E_i = \sum_{k=1}^i n_k\).<br>
+                <span class="french-term">Fréquence cumulée (FCC)</span> : \(F_i = \sum_{k=1}^i f_k\).</p>
+                <div class="formula">\(N = \sum n_i \quad ; \quad f_i = \frac{n_i}{N} \quad ; \quad F(x) = P(X \le x)\)</div>
+            </div>
+            <!-- المتغير المستمر والطبقات -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>المتغير المستمر <span class="french-term">Variable continue</span> و <span class="french-term">Classes</span></h3>
+                <p>تُجمع القيم في فئات \([a_i, a_{i+1}[\):<br>
+                • <span class="french-term">Centre de classe \(c_i\)</span> = \(\frac{a_i + a_{i+1}}{2}\)<br>
+                • <span class="french-term">Amplitude \(e_i\)</span> = \(a_{i+1} - a_i\)<br>
+                • <span class="french-term">Effectif \(n_i\)</span> = عدد القيم في الفئة.<br>
+                ✨ عدد الفئات التقريبي : \(k \approx \sqrt{N}\).</p>
+                <div class="formula">المدرج التكراري (Histogramme) : الارتفاع = \( \frac{n_i}{e_i} \) إذا كانت الأطوال مختلفة.</div>
+            </div>
+            <!-- التمثيلات البيانية -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>التمثيلات البيانية (Représentations graphiques)</h3>
+                <p><strong>النوعي (Qualitatif)</strong> : مخطط دائري (Camembert)، أعمدة (Diagramme en barres).<br>
+                <strong>الكمي المتقطع</strong> : مخطط أسياخ (Bâtons)، مضلع التكرارات.<br>
+                <strong>الكمي المستمر</strong> : مدرج تكراري (Histogramme)، مضلع التكرارات المتجمعة (منحنى متدرج).</p>
+                <div class="example-box">📐 زاوية القطاع الدائري : \(\alpha_i = 360 \times f_i\)</div>
+            </div>
+            <!-- دالة التوزيع -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-simple"></i></div>
+                <h3>دالة التوزيع <span class="french-term">Fonction de répartition \(F(x)\)</span></h3>
+                <p>لكل \(x \in \mathbb{R}\)، \(F(x) = P(X \le x)\). وهي دالة متدرجة (حالة متقطع) أو متصلة متعددة التعريف (حالة مستمر).<br>
+                خواص : \(F(-\infty)=0,\; F(+\infty)=1\)، غير تناقصية.</p>
+                <div class="formula">\(F(x) = \sum_{x_i \le x} f_i\)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================= الفصل الثاني ========================= -->
+    <div class="chapter-section">
+        <div class="section-title"><i class="fas fa-calculator"></i> 📈 الفصل الثاني : التمثيل العددي للبيانات (Représentation numérique)</div>
+        <div class="grid-cards">
+            <!-- المتوسط الحسابي -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-arithmetic"></i></div>
+                <h3>📌 المتوسط الحسابي <span class="french-term">Moyenne arithmétique</span></h3>
+                <p>للسلسلة المتقطعة : \(\bar{x} = \frac{1}{N}\sum n_i x_i = \sum f_i x_i\)<br>
+                للمتغير المستمر : نستخدم مراكز الفئات \(c_i\).<br>
+                الخاصية : \(y = a x + b \Rightarrow \bar{y} = a\bar{x}+b\).</p>
+                <div class="formula">\(\bar{x} = \frac{\sum n_i x_i}{N}\)</div>
+                <div class="example-box">مثال : علامات {5,7,8,10} → \(\bar{x}=7.5\)</div>
+            </div>
+            <!-- الوسيط -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-gantt"></i></div>
+                <h3>📌 الوسيط <span class="french-term">Médiane (Me)</span></h3>
+                <p><strong>متقطع</strong> : القيمة المركزية بعد الترتيب (N فردي : \(x_{(N+1)/2}\)، زوجي : متوسط القيمتين المركزيتين).<br>
+                <strong>مستمر</strong> : استيفاء خطي داخل الفئة الوسيطية.</p>
+                <div class="formula">\(Me = x_k + \frac{\frac{N}{2} - E_{k-1}}{n_k} \cdot (x_{k+1} - x_k)\)</div>
+                <p>حيث \(E_{k-1}\) التكرار المتجمع قبل الفئة الوسيطية.</p>
+            </div>
+            <!-- المنوال -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>📌 المنوال <span class="french-term">Mode (Mo)</span></h3>
+                <p>القيمة الأكثر تكراراً (أكبر <span class="french-term">effectif</span>). للمتغير المستمر نحدد الفئة المنوالية ثم:</p>
+                <div class="formula">\(Mo = x_k + \frac{n_k - n_{k-1}}{(n_k - n_{k-1}) + (n_k - n_{k+1})} \cdot e_k\)</div>
+                <p>\(n_k\) : تكرار الفئة المنوالية، \(e_k\) طول الفئة.</p>
+            </div>
+            <!-- التباين والانحراف المعياري -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>📌 التباين <span class="french-term">Variance</span> و الانحراف المعياري <span class="french-term">Écart-type</span></h3>
+                <p><span class="french-term">Variance</span> : متوسط مربع الانحرافات عن المتوسط.<br>
+                \(\sigma^2 = \frac{1}{N}\sum n_i (x_i - \bar{x})^2 = \sum f_i (x_i - \bar{x})^2\)<br>
+                <strong>نظرية كونيغ (Théorème de König)</strong> لحساب أسهل :</p>
+                <div class="formula">\(\sigma^2 = \frac{1}{N}\sum n_i x_i^2 - (\bar{x})^2\)</div>
+                <p>الانحراف المعياري : \(\sigma = \sqrt{\sigma^2}\)<br>خاصية : \(\sigma_{aX+b} = |a|\sigma_X\)</p>
+            </div>
+            <!-- الربيعات والمدى -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>الربيعات <span class="french-term">Quartiles</span> و المدى <span class="french-term">Étendue</span></h3>
+                <p><span class="french-term">Étendue</span> : \(e = x_{\max} - x_{\min}\).<br>
+                <span class="french-term">Premier quartile \(Q_1\)</span> : \(F(Q_1)=0.25\)<br>
+                <span class="french-term">Troisième quartile \(Q_3\)</span> : \(F(Q_3)=0.75\)<br>
+                الفرق الربيعي \(Q_3 - Q_1\) يحتوي 50% من البيانات.<br>
+                حساب مستمر : \(Q_1 = x_k + \frac{N/4 - E_{k-1}}{n_k} e_k\)</p>
+                <div class="formula">\(F(Q_1) = \frac{1}{4}, \quad F(Q_3) = \frac{3}{4}\)</div>
+            </div>
+            <!-- معامل الاختلاف ومتوسطات أخرى -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-percent"></i></div>
+                <h3>معامل الاختلاف <span class="french-term">Coefficient de variation</span></h3>
+                <p><strong>CV</strong> \(= \frac{\sigma}{\bar{x}}\) (بدون وحدة، يقارن التشتت).<br>
+                <strong>المتوسط الهندسي (Moyenne géométrique)</strong> : \(G = \sqrt[N]{\prod x_i^{n_i}}\)<br>
+                <strong>المتوسط التوافقي (Moyenne harmonique)</strong> : \(H = \frac{N}{\sum n_i/x_i}\).<br>
+                </p>
+                <div class="example-box">💡 CV صغير → بيانات متجانسة، CV كبير → تشتت عالٍ.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- لوحة ملخص الصيغ والخواص -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div class="card" style="background: linear-gradient(120deg, #fff5fc, #f1f0ff);">
+            <h3><i class="fas fa-dice-d6"></i> قوانين أساسية (Lois essentielles)</h3>
+            <p>🔹 مجموع الانحرافات عن المتوسط : \(\sum n_i (x_i - \bar{x}) = 0\)<br>
+            🔹 التباين هو القيمة الصغرى لـ \(\sum n_i (x_i - a)^2\) عندما \(a = \bar{x}\).<br>
+            🔹 تغيير الأصل والمقياس : \(Var(aX+b)=a^2 Var(X)\)<br>
+            🔹 المتغير المركز : \(X_c = x - \bar{x} \Rightarrow \bar{X_c}=0\)</p>
+            <div class="formula">\( \sum n_i (x_i - \bar{x}) = 0 \)</div>
+        </div>
+        <div class="card" style="background: linear-gradient(120deg, #fff5fc, #f1f0ff);">
+            <h3><i class="fas fa-ruler-combined"></i> جدول ملخص القوانين</h3>
+            <ul>
+                <li><strong>المتوسط :</strong> \(\bar{x} = \frac{\sum n_i x_i}{N}\)</li>
+                <li><strong>التباين (كونيغ) :</strong> \(\sigma^2 = \frac{\sum n_i x_i^2}{N} - (\bar{x})^2\)</li>
+                <li><strong>الوسيط (مستمر) :</strong> \(Me = x_k + \frac{N/2 - E_{k-1}}{n_k} e_k\)</li>
+                <li><strong>المنوال (مستمر) :</strong> \(Mo = x_k + \frac{n_k - n_{k-1}}{(n_k - n_{k-1})+(n_k - n_{k+1})} e_k\)</li>
+                <li><strong>التكرار النسبي المتجمع :</strong> \(F_i = \sum_{k=1}^i f_k\)</li>
+            </ul>
+        </div>
+        <div class="card" style="background: linear-gradient(120deg, #fff5fc, #f1f0ff);">
+            <h3><i class="fas fa-chalkboard-user"></i> مثال تطبيقي كامل</h3>
+            <p><strong>سلسلة :</strong> علامات {10,12,13,13,15,16,18} (N=7)<br>
+            المتوسط \(\bar{x}=13.86\)، الوسيط = 13، المنوال = 13، التباين ≈ 6.12، \(\sigma\approx2.47\).<br>
+            للمتغير المستمر (فئات الرواتب) : نستخدم مراكز الفئات ثم المتوسط الموزون.</p>
+            <div class="example-box"><i class="fas fa-check-circle" style="color:#8b5cf6;"></i> تطبيق الاستيفاء الخطي للحصول على الوسيط والمنوال بدقة.</div>
+        </div>
+    </div>
+
+    <!-- قسم إضافي للمدرج التكراري والتكرارات المتجمعة -->
+    <div style="background: rgba(255,255,245,0.7); border-radius: 2rem; padding: 1.5rem; margin: 1rem 0;">
+        <h3 style="display: flex; gap: 0.5rem; align-items: center; justify-content: center;"><i class="fas fa-chart-histogram" style="color:#db2777;"></i> ملاحظات مهمة حول التمثيلات البيانية والمدرج التكراري</h3>
+        <div class="formula" style="background:#f0eaff; text-align:right;">
+            <i class="fas fa-lightbulb"></i> <strong>تذكير هام :</strong> في حالة <span class="french-term">classes à amplitudes inégales</span> (فئات ذات أطوال مختلفة)، يجب تعديل ارتفاع المستطيل في <span class="french-term">histogramme</span> ليكون \(h_i = \frac{n_i}{e_i}\) حتى تمثل المساحة التكرار \(n_i\).<br>
+            📌 <span class="french-term">Polygone des effectifs cumulés croissants</span> : يُحصل عليه بتوصيل النقاط \((a_i, E_i)\) حيث \(a_i\) هي الحدود العليا للفئات، والنقطة الأولى \((a_0,0)\).<br>
+            📍 يتقاطع منحنى التكرارات المتجمعة التصاعدية والتنازلية عند قيمة الوسيط (Me).
+        </div>
+    </div>
+
+    <div class="footer">
+        <i class="fas fa-heart" style="color: #ec489a;"></i> إعداد ملخص الفصلين 1 و 2 في الإحصاء الوصفي – شرح بالعربية مع مصطلحات فرنسية <br>
+        جميع القوانين الأساسية: التكرارات، المتوسط، الوسيط، المنوال، التباين، الانحراف المعياري، الربيعات، معامل الاختلاف. <br>
+        تصميم أنيق بألوان وردية وزرقاء ليسهل عليك المراجعة وحل التمارين (TD1 & TD2) بنجاح.
+    </div>
+</div>
+</body>
+</html>
